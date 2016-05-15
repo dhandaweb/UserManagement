@@ -1,0 +1,105 @@
+﻿<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit details</h4>
+            </div>
+            <div class="modal-body">
+                <form data-toggle="validator" role="form" id="myForm">
+                    <div class="form-group">
+                        <label for="disabledInput">Job ID</label>
+                        <div>
+                            <input class="form-control" id="disabledInput" type="text" data-bind="value: SelectedContact().JObId" disabled>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="FirstName">First name: </label>
+                                <input type="text" data-bind="value: SelectedContact().FirstName" class="form-control" id="FirstName" placeholder="First name" data-error="First name required" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LastName">Last name: </label>
+                                <input type="text" data-bind="value: SelectedContact().LastName" class="form-control" id="LastName" placeholder="Last Name" data-error="Last name required" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail" class="control-label">Email</label>
+                        <input type="email" data-bind="value: SelectedContact().Email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="StreetAddress">Street Address </label>
+                                <input type="text" data-bind="value: SelectedContact().StreetAd" class="form-control" id="StreetAddress" placeholder="Street Address" data-error="Street Address required" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="Email">State: </label>
+                                <select data-bind="options:States, value: SelectedContact().State"></select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="FirstName">Currently employed: </label>
+                        <div>
+                            <label><input type="radio" value="Yes" data-bind="checked: SelectedContact().CurrentEmployed" />Yes</label>
+                            <label><input type="radio" value="No" data-bind="checked: SelectedContact().CurrentEmployed" />No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="FirstName">Avaliable Date (Format: YYYY-MM-DD)</label>
+                        <input type="text" pattern="^\d{4}-\d{2}-\d{2}$" data-bind="value: SelectedContact().AvaliableOn" maxlength="10" data-error="Not correct format (correct format is : YYYY-MM-DD)" class="form-control" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <!-- ko if : SelectedContact().CurrentEmployed() === 'Yes' -->
+                            <div class="col-md-6">
+                                <label for="CurrentSalary">Curret Salary: </label>
+                                <!--<select data-bind="options: SalaryValues, value: SelectedContact().CurrentSalary"></select>-->
+                                <input type="text" data-bind="value: SelectedContact().CurrentSalary" class="form-control" id="CurrentSalary" placeholder="Current Salary" data-error="Current salary required" required>
+
+                            </div>
+                            <!-- /ko -->
+                            <div class="col-md-6">
+                                <label for="DesiredSalary">Desired Salary: </label>
+                                <!--<select data-bind="options: SalaryValues, value: SelectedContact().DesiredSalary"></select>-->
+                                <input type="text" data-bind="value: SelectedContact().DesiredSalary" class="form-control" id="DesiredSalary" placeholder="Desired Salary" data-error="Desired salary required" required>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <button type="submit" data-dismiss="modal" data-bind="click : SaveDetails" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+

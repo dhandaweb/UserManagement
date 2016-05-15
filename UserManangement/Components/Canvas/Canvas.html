@@ -1,0 +1,51 @@
+﻿<div id="main-content">
+    <div class="wrapper site-min-height">
+        <div class="row">
+            <div class="col-md-12" data-bind="foreach: List()">
+                <div class="panel">
+                    <div class="panel-heading" style="padding: 5px 15px;">
+                        <div style="display:inline-block;">
+                            <h3 class="m-b-xs" data-bind="text:FirstName() + LastName()">
+                            </h3>
+                        </div>
+                        <div class="pull-right">
+                                <button style="margin-top: 10px;" data-bind="click:$parent.Edit" class="btn btn-primary"><i class="fa fa-external-link"></i> Edit</button>
+                        </div>
+                    </div>
+                    <div class="panel-body" style="padding: 0px 15px;">
+                        <div class="row" style="margin-bottom:20px;">
+                            <div class="col-md-12">
+                                <h4>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <small data-bind="text:StreetAd() + State()"></small>
+                                </h4>
+                                <h4>
+                                    <i class="fa fa-envelope-o"></i>
+                                    <small data-bind="text:Email()"></small>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-12">
+                                <small class="stat-label">Current employed </small>
+                                <h4 class="m-t-xs" data-bind="text:CurrentEmployed()">Yes</h4>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <small class="stat-label">Avaliable on </small>
+                                <h4 class="m-t-xs" data-bind="text:AvaliableOn()">03-09-2016</h4>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <small class="stat-label">Desired salary </small>
+                                <h4 class="m-t-xs" data-bind="text:DesiredSalary()">100k</h4>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <small class="stat-label" >Current salary </small>
+                                <h4 class="m-t-xs" data-bind="text:CurrentSalary()">80k</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
